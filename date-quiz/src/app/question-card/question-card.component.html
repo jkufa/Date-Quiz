@@ -1,0 +1,13 @@
+<ng-container *ngIf="showCard">
+  <div class="parent-container">
+    <div class="vertical-center">
+      <div class="question">{{ questionSet[index].question }}</div>
+      <div class="button-set">
+        <ng-container *ngFor="let answerPair of questionSet[index].answers">
+          <button (click)="sendAnswer(answerPair)">{{answerPair.answer}}</button>
+        </ng-container>
+      </div>
+      <div class="finished" *ngIf="lastQuestion">See Results</div>
+    </div>
+  </div>
+</ng-container>
